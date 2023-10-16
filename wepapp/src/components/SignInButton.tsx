@@ -43,7 +43,7 @@ function  SignInButton() {
             message: JSON.stringify(message),
             signedMessage,
             redirect: true,
-            callbackUrl: '/hidden'
+           
           });
           if (response?.error) {
             console.log("Error occured:", response.error);

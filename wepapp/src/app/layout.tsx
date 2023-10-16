@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 // import { SessionProvider } from 'next-auth/react'
 // import { Provider as WagmiProvider } from 'wagmi'
 import Providers from './_providers/providers'
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,8 +26,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "antialiased min-h-screen pt-16")}>
       <Providers>
+        <ThemeProvider>
         <Navbar/>
         {children}
+        </ThemeProvider>
         </Providers>
         </body>
     </html>
