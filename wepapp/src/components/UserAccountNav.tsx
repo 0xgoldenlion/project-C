@@ -12,11 +12,18 @@ import {
 
 import { LogOut } from "lucide-react";
 import { signOut } from "next-auth/react";
+import { useDisconnect } from "wagmi";
+
 type Props = {
     user: User
 }
 
 const UserAccountNav = ({user}: Props) => {
+    const { disconnectAsync } = useDisconnect();
+    const handleSignout = async () => {
+      disconnectAsync();
+      signOut();
+    };
   return (
     <DropdownMenu>
         <DropdownMenuTrigger>
@@ -37,7 +44,7 @@ const UserAccountNav = ({user}: Props) => {
         <DropdownMenuSeparator />
         <DropdownMenuItem
           onSelect={() => {
-            signOut();
+            handleSignout()
           }}
           className="text-red-600 cursor-pointer"
         >

@@ -3,6 +3,10 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from "@/components/Navbar";
+// import { SessionProvider } from 'next-auth/react'
+// import { Provider as WagmiProvider } from 'wagmi'
+import Providers from './_providers/providers'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,10 +21,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    
     <html lang="en">
       <body className={cn(inter.className, "antialiased min-h-screen pt-16")}>
+      <Providers>
         <Navbar/>
-        {children}</body>
+        {children}
+        </Providers>
+        </body>
     </html>
   )
 }
