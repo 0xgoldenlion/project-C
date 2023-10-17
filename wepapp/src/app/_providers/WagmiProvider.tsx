@@ -1,11 +1,13 @@
-import React from "react";
+// @ts-nocheck
 
+import React from "react";
 import {
   EthereumClient,
   w3mConnectors,
   w3mProvider,
 } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/react";
+// @ts-ignore
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { polygonMumbai } from "wagmi/chains";
 

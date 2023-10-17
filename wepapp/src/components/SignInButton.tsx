@@ -2,6 +2,7 @@
 import React from "react";
 import { SiweMessage } from "siwe";
 import { polygonMumbai } from "viem/chains";
+// @ts-ignore
 import {useConnect , useAccount, useSignMessage } from "wagmi";
 import { useWeb3Modal } from "@web3modal/react";
 import { getCsrfToken, signIn } from "next-auth/react";

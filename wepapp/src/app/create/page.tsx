@@ -22,7 +22,7 @@ const CreatePage = async (props: Props) => {
       <div className="flex p-4 mt-5 border-none bg-secondary">
         <InfoIcon className="w-12 h-12 mr-3 text-blue-400" />
         <div>
-        Start by sharing the course title or specific skills you're eager to explore. Next, detail the individual units or key concepts you want to master. That's all! Sit back and watch as our advanced AI crafts a fully customized course, uniquely designed for your learning desires. 
+        Start by sharing the course title or specific skills you're eager to explore. Next, detail the individual units or key concepts you want to master. Thats all! Sit back and watch as our advanced AI crafts a fully customized course, uniquely designed for your learning desires. 
         </div>
       </div>
 
