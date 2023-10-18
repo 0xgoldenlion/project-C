@@ -33,6 +33,7 @@ function  SignInButton() {
             nonce: await getCsrfToken(),
             chainId: polygonMumbai.id,
           });
+          console.log("getCsrfToken", getCsrfToken())
     
           const signedMessage = await signMessageAsync({
             message: message.prepareMessage(),
@@ -40,7 +41,7 @@ function  SignInButton() {
     
           setHasSigned(true);
     
-          const response = await signIn("web3", {
+          const response = await signIn("eee", {
             message: JSON.stringify(message),
             signedMessage,
             redirect: true,

@@ -50,42 +50,43 @@ function CreateCourseForm({ }: Props) {
                         );
                     }}
                 />
-
-                {form.watch("units").map((_, index) => {
-                    return (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{
-                                opacity: { duration: 0.2 },
-                                height: { duration: 0.2 },
-                            }}
-                        >
-                            <FormField
+                <AnimatePresence>
+                    {form.watch("units").map((_, index) => {
+                        return (
+                            <motion.div
                                 key={index}
-                                control={form.control}
-                                name={`units.${index}`}
-                                render={({ field }) => {
-                                    return (
-                                        <FormItem className="flex flex-col items-start w-full sm:items-center sm:flex-row">
-                                            <FormLabel className="flex-[1] text-xl">
-                                                Unit {index + 1}
-                                            </FormLabel>
-                                            <FormControl className="flex-[6]">
-                                                <Input
-                                                    placeholder="Enter subtopic of the course"
-                                                    {...field}
-                                                />
-                                            </FormControl>
-                                        </FormItem>
-                                    );
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{
+                                    opacity: { duration: 0.2 },
+                                    height: { duration: 0.2 },
                                 }}
-                            />
-                        </motion.div>
-                    );
-                })}
+                            >
+                                <FormField
+                                    key={index}
+                                    control={form.control}
+                                    name={`units.${index}`}
+                                    render={({ field }) => {
+                                        return (
+                                            <FormItem className="flex flex-col items-start w-full sm:items-center sm:flex-row">
+                                                <FormLabel className="flex-[1] text-xl">
+                                                    Unit {index + 1}
+                                                </FormLabel>
+                                                <FormControl className="flex-[6]">
+                                                    <Input
+                                                        placeholder="Enter subtopic of the course"
+                                                        {...field}
+                                                    />
+                                                </FormControl>
+                                            </FormItem>
+                                        );
+                                    }}
+                                />
+                            </motion.div>
+                        );
+                    })}
+                </AnimatePresence>
                 <div className="flex items-center justify-center mt-4">
                     <Separator className="flex-[1]" />
                     <div className="mx-4">
@@ -115,14 +116,14 @@ function CreateCourseForm({ }: Props) {
                     </div>
                     <Separator className="flex-[1]" />
                 </div>
-                {/* <Button
-                    disabled={isLoading}
+                <Button
+                    // disabled={isLoading}
                     type="submit"
                     className="w-full mt-6"
                     size="lg"
                 >
-                    Lets Go!
-                </Button> */}
+                    Start Generating 
+                </Button>
 
             </form>
         </Form>

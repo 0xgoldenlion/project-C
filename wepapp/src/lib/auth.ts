@@ -29,24 +29,43 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
     jwt: async ({ token }) => {
+        
       const db_user = await prisma.user.findFirst({
         where: {
           email: token.email,
         },
       });
+     
       if (db_user) {
         token.id = db_user.id;
         token.credits = db_user.credits;
+
+    //     const meh =  await prisma.user.create({
+    //         data: {
+    //             id: token.id,
+    //             name:  token?.sub,
+    //             email:  token?.sub,
+    //             image: token?.picture,
+    //             credits: token.credits,
+              
+    //         },
+    //       })
+        
+    //       console.log("user logging", meh)
       }
       return token;
     },
-    session: ({ session, token }) => {
+    session:  ({ session, token }) => {
       if (token) {
         session.user.id = token.id;
         session.user.name = token.sub;
         session.user.email = token.sub;
         session.user.image = token.picture;
         session.user.credits = token.credits;
+
+       
+
+
       }
       return session;
     },
@@ -55,8 +74,8 @@ export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers:  [
     CredentialsProvider({
-      id: "web3",
-      name: "web3",
+      id: "eee",
+      name: "eee",
       credentials: {
         message: { label: "Message", type: "text" },
         signedMessage: { label: "Signed Message", type: "text" }, // aka signature
@@ -92,7 +111,8 @@ export const authOptions: NextAuthOptions = {
 
           // if (new Date(result.data.expirationTime as string) < new Date())
           //   throw new Error("Signature Already expired");
-          console.log("Returning")
+          console.log("Returning",)
+          console.log("user detail ",siwe.address )
           return {
             id: siwe.address,
           };
