@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 // import { Provider as WagmiProvider } from 'wagmi'
 import Providers from './_providers/providers'
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -29,6 +30,7 @@ export default function RootLayout({
         <ThemeProvider>
         <Navbar/>
         {children}
+        <Toaster/>
         </ThemeProvider>
         </Providers>
         </body>
