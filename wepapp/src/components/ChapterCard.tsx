@@ -27,6 +27,7 @@ const ChapterCard = React.forwardRef<ChapterCardHandler, Props>(
         const response = await axios.post("/api/chapter/getInfo", {
           chapterId: chapter.id,
         });
+       
         return response.data;
       },
     });

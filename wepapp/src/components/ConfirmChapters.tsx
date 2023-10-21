@@ -81,6 +81,21 @@ const ConfirmChapters = ({ course }: Props) => {
               Save & Continue
               <ChevronRight className="w-4 h-4 ml-2" />
             </Link>
+            // <Button
+            //   type="button"
+            //   className="ml-4 font-semibold"
+            // //   disabled={loading}
+            //   onClick={() => {
+            //     setLoading(true);
+            //     Object.values(chapterRefs).forEach((ref) => {
+            //       ref.current?.triggerLoad();
+            //     });
+            //   }}
+            // >
+            //   Generate
+            //   <ChevronRight className="w-4 h-4 ml-2" strokeWidth={4} />
+            // </Button>
+
           ) : (
             <Button
               type="button"
