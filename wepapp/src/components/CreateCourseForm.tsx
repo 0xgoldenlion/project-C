@@ -16,6 +16,7 @@ import axios from "axios";
 
 import { useToast } from "./ui/use-toast";
 import { useRouter } from "next/navigation";
+import SubscriptionAction from './SubscriptionAction';
 
 type Props = {}
 type Input = z.infer<typeof createChaptersSchema>
@@ -165,9 +166,12 @@ function CreateCourseForm({ }: Props) {
                 >
                     Start Generating 
                 </Button>
-
+                
             </form>
+            <SubscriptionAction />
+           
         </Form>
+        
     )
 }
 
