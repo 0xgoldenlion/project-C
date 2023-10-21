@@ -45,7 +45,7 @@ export async function POST(req: Request, res: Response) {
     );
 
     const questions = await getQuestionsFromTranscript(
-      transcript,
+      summary,
       chapter.name
     );
 
